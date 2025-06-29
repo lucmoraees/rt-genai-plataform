@@ -10,10 +10,12 @@ services:
       - .env
     environment:
       - PYTHONPATH=/app/src
-      - MONGO_URI=mongodb://mongo:27017
+      - MONGO_URI=mongodb://mongodb:27017
       - MONGO_DB=chat_db
     depends_on:
       - mongodb
+    networks:
+      - genai_net
 
   mongodb:
     container_name: genai_mongo_db
@@ -22,6 +24,11 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
+    networks:
+      - genai_net
 
 volumes:
   mongo_data:
+
+networks:
+  genai_net:
