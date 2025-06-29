@@ -13,7 +13,7 @@ class HistoryItemDTO(BaseModel):
   systemPrompt: str
   temperature: float
   timestamp: datetime
-  llmResponseTimeS: Optional[float]
+  llmResponseSeconds: Optional[float]
 
 class HistoryResponseDTO(BaseModel):
   history: List[HistoryItemDTO]

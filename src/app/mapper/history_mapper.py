@@ -14,7 +14,7 @@ class HistoryMapper:
       timestamp=item.timestamp,
       systemPrompt=item.system_prompt,
       temperature=item.temperature,
-      llmResponseTimeS=item.llm_response_time_s
+      llmResponseSeconds=item.llm_response_seconds
     )
   
   @staticmethod
@@ -28,5 +28,5 @@ class HistoryMapper:
       timestamp=item.timestamp,
       system_prompt=item.systemPrompt,
       temperature=item.temperature,
-      llm_response_time_s=item.llmResponseTimeS
+      llm_response_seconds=item.llmResponseSeconds
     )

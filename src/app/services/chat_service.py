@@ -31,7 +31,7 @@ class ChatService:
                                  response=chat.response,
                                  user_id=chat.user_id,
                                  user_prompt=chat.user_prompt,
-                                 llm_response_time_s=round(duration, 2))
+                                 llm_response_seconds=round(duration, 2))
     
     asyncio.create_task(self.save_chat_history_safe(history))
 

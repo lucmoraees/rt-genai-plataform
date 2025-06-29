@@ -2,7 +2,7 @@ from datetime import datetime
 from uuid import uuid4
 
 class HistoryItem:
-  def __init__(self, id: str, user_id: str, user_prompt: str, response: str, model: str, timestamp: datetime, system_prompt: str, temperature: float, llm_response_time_s: float):
+  def __init__(self, id: str, user_id: str, user_prompt: str, response: str, model: str, timestamp: datetime, system_prompt: str, temperature: float, llm_response_seconds: float):
     self.id = id
     self.user_id = user_id
     self.user_prompt = user_prompt
@@ -11,10 +11,10 @@ class HistoryItem:
     self.timestamp = timestamp
     self.system_prompt = system_prompt
     self.temperature = temperature
-    self.llm_response_time_s = llm_response_time_s
+    self.llm_response_seconds = llm_response_seconds
 
   @classmethod
-  def create(cls, user_id: str, user_prompt: str, response: str, model: str, system_prompt: str, temperature: float, llm_response_time_s: float):
+  def create(cls, user_id: str, user_prompt: str, response: str, model: str, system_prompt: str, temperature: float, llm_response_seconds: float):
     return cls(
       id=str(uuid4()),
       user_id=user_id,
@@ -23,7 +23,7 @@ class HistoryItem:
       model=model,
       system_prompt=system_prompt,
       temperature=temperature,
-      llm_response_time_s=llm_response_time_s,
+      llm_response_seconds=llm_response_seconds,
       timestamp=datetime.now()
     )
 
@@ -38,7 +38,7 @@ class HistoryItem:
       system_prompt=data["systemPrompt"],
       temperature=data["temperature"],
       timestamp=data["timestamp"],
-      llm_response_time_s=data["llmResponseTimeS"]
+      llm_response_seconds=data["llmResponseSeconds"]
     )
 
   def to_dict(self):
@@ -51,5 +51,5 @@ class HistoryItem:
       "systemPrompt": self.system_prompt,
       "temperature": self.temperature,
       "timestamp": self.timestamp,
-      "llmResponseTimeS": self.llm_response_time_s
+      "llmResponseSeconds": self.llm_response_seconds
     }
