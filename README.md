@@ -136,7 +136,7 @@ Logs, métricas e falhas são monitorados em tempo real por meio de AWS CloudWat
 
 ### 3️⃣ Justificativa da Escolha do Banco de Dados 
 
-Escolhido: **DynamoDB Atlas**.
+Escolhido: **DynamoDB**.
 Justificativas:
   - Banco de dados NoSQL serverless com modelo de cobrança por demanda (pay-per-request)
   - Armazenamento em chave-valor/documento, ideal para registros de interações com diferentes formatos.
