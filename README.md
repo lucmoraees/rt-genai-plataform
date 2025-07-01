@@ -158,4 +158,4 @@ Justificativas:
 
 ## Licença
 
-MIT License
+[MIT License](https://github.com/lucmoraees/rt-genai-plataform/blob/main/LICENSE)
